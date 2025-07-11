@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (if any)
+dist/
+build/
+
+# System files
+.DS_Store
+
+# IDE/editor folders (optional, depends on your IDE)
+.vscode/
+.idea/
+
+# Lock files - usually you commit package-lock.json or yarn.lock, so usually no ignore here unless you want to ignore
+# package-lock.json
+# yarn.lock
+
+# Optional: coverage reports if you use testing tools
+coverage/
+
+# Optional: Vite cache or temp files
+.vite/

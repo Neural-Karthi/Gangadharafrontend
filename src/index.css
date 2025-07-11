@@ -1,0 +1,114 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 222 47% 11%; /* Dark Blue */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 221 39% 49%; /* Professional Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 210 40% 96.1%; /* Light Blue-Gray */
+    --secondary-foreground: 222 47% 11%; /* Dark Blue */
+    --muted: 210 40% 98%; /* Very Light Blue-Gray */
+    --muted-foreground: 215 20% 65%; /* Mid Gray */
+    --accent: 45 85% 60%; /* Soft Gold */
+    --accent-foreground: 24 9.8% 10%; /* Dark text on gold */
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%; /* Light Gray Border */
+    --input: 214 32% 91%;
+    --ring: 221 39% 49%; /* Primary Blue */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%; /* Very Dark Blue */
+    --foreground: 210 40% 98%; /* Off-white */
+    --card: 224 71% 6%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%; 
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 83% 75%; /* Lighter Blue */
+    --primary-foreground: 210 40% 9.8%; /* Dark Text */
+    --secondary: 217 33% 17%; /* Dark Blue-Gray */
+    --secondary-foreground: 210 40% 98%; /* Light Text */
+    --muted: 217 33% 17%; /* Dark Blue-Gray */
+    --muted-foreground: 215 20% 65%; /* Gray */
+    --accent: 45 90% 65%; /* Brighter Gold */
+    --accent-foreground: 48 9.8% 10%; /* Dark Text */
+
+    --destructive: 0 70% 55%; 
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 24% 20%; /* Darker Gray border */
+    --input: 217 24% 20%;
+    --ring: 221 83% 75%; /* Lighter Blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-theme {
+    @apply bg-gradient-to-r from-accent to-destructive bg-clip-text text-transparent;
+  }
+  .text-price-highlight {
+    @apply text-primary font-bold;
+  }
+  .bg-gradient-theme {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-600 { animation-delay: 0.6s; }
+  .animate-delay-800 { animation-delay: 0.8s; }
+  .animate-delay-1000 { animation-delay: 1s; }
+
+  .typewriter-text::after {
+    content: '|';
+    @apply inline-block ml-1 text-primary animate-caret-blink;
+  }
+  .will-change-transform {
+    will-change: transform;
+  }
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  .observe-anim {
+    @apply opacity-0 transition-all duration-1000 ease-out;
+  }
+  .observe-anim.is-visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+  .observe-anim.slide-in-up {
+    @apply translate-y-10;
+  }
+   .observe-anim.slide-in-left {
+    @apply md:-translate-x-10;
+  }
+  .observe-anim.slide-in-right {
+    @apply md:translate-x-10;
+  }
+}
