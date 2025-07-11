@@ -19,7 +19,7 @@ const CoursesPage = () => {
   const fetchWebinars = async () => {
     try {
       const token = localStorage.getItem('auth_token');
-      const res = await fetch('http://82.29.162.228/api/webinar', {
+      const res = await fetch('https://gangadharnagarjuna.in/api/webinar', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

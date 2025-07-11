@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API base URL - this will point to your Express server
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://82.29.162.228/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://gangadharnagarjuna.in/api';
 
 // Create axios instance with default config
 export const apiClient = axios.create({

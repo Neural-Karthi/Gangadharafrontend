@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
 const fetchWebinars = async () => {
   try {
-    const res = await fetch('http://82.29.162.228/api/webinar');
+    const res = await fetch('https://gangadharnagarjuna.in/api/webinar');
     const data = await res.json();
 
     if (data.success) {
