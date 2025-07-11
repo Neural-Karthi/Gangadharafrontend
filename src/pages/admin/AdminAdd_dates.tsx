@@ -48,7 +48,7 @@ const AdminAdd_dates = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('auth_token');
-      const res = await fetch('http://localhost:5000/api/webinar/add', {
+      const res = await fetch('http://82.29.162.228/api/webinar/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
