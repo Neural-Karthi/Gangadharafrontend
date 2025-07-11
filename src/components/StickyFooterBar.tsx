@@ -18,7 +18,7 @@ const StickyFooterBar: React.FC<StickyFooterBarProps> = ({ webinars }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6">
         <div className="text-center sm:text-left">
           <p className="text-sm sm:text-base font-semibold">
-            Special Offer: <span className="line-through opacity-70 text-sm">₹999</span>
+            Special Offer: <span className="line-through opacity-70 text-sm">₹{webinars[0]?.mrp}</span>
             <span className="text-xl sm:text-2xl font-bold text-primary ml-2">₹{formattedPrice}</span> Only!
           </p>
         </div>
