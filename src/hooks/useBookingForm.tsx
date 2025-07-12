@@ -48,7 +48,7 @@ export const useBookingForm = () => {
                 priceamount:values?.price
             };
             
-            const response = await apiClient.post('/api/orders/create', orderPayload);
+            const response = await apiClient.post('/orders/create', orderPayload);
             const orderData = response.data.data;
             
             console.log("Create order API response:", orderData);
