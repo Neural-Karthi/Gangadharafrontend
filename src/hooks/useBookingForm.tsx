@@ -48,7 +48,7 @@ export const useBookingForm = () => {
                 priceamount:values?.price
             };
             
-            const response = await apiClient.post('/orders/create', orderPayload);
+            const response = await apiClient.post('/api/orders/create', orderPayload);
             const orderData = response.data.data;
             
             console.log("Create order API response:", orderData);
@@ -105,14 +105,13 @@ export const useBookingForm = () => {
                     });
                     
                     const verificationData = verifyResponse.data.data;
-                    console.log("Verify payment API response:", verificationData);
 
                     if (!verificationData?.verified) {
                         console.error("Payment verification failed:", verificationData);
                         navigate(`/payment-failure?registrationId=${registrationId}`);
                     } else {
                         console.log("Payment verified successfully.");
-                        // Store email in localStorage and pass it in URL for the success page
+        
                         const userEmail = values.email;
                         localStorage.setItem(`registration_email_${registrationId}`, userEmail);
                         navigate(`/payment-success?registrationId=${registrationId}&email=${encodeURIComponent(userEmail)}`);
